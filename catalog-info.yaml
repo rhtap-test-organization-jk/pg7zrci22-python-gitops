@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pg7zrci22-python-gitops
+  description: This is GitOps manifest for pg7zrci22-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=pg7zrci22-python
+    backstage.io/kubernetes-id: pg7zrci22-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: pg7zrci22-python-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pg7zrci22-python
